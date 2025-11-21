@@ -12,6 +12,10 @@ const quotes = [
 "The purpose of our lives is to be happy. - Dalai Lama"
 ];
 
+app.listen(PORT,() => {
+        console.log(`Server is running on http://localhost:${PORT}`);
+})
+
 app.get('/',(req,res)=>{
     res.send('hello');
 })
@@ -21,7 +25,4 @@ app.get('/about', (req, res) =>{
 })
 app.get('/randomeqoute', (req,res) => {
     res.status(200).send(quotes[Math.floor(Math.random()*quotes.length)]);
-})
-app.listen(PORT,() => {
-        console.log(`Server is running on http://localhost:${PORT}`);
 })
